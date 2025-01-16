@@ -1,0 +1,31 @@
+{
+    "name": "postgres-connector",
+    "config": {
+        "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+        "database.hostname": "postgres",
+        "database.port": "5432",
+        "database.user": "postgres_user",
+        "database.password": "postgres_password",
+        "database.dbname": "app",
+        "database.server.name": "postgres",
+        "topic.prefix": "sample.topic.prefix",
+        "plugin.name": "pgoutput",
+        "table.include.list": "public.item",
+        "slot.name": "debezium_slot",
+        "transforms": "unwrap,Reroute",
+        "transforms.unwrap.type": "io.debezium.transforms.ExtractNewRecordState",
+        "transforms.unwrap.drop.tombstones": "false",
+        "transforms.Reroute.type": "io.debezium.transforms.ByLogicalTableRouter",
+        "transforms.Reroute.key.enforce.uniqueness": "false",
+        "transforms.Reroute.topic.regex": "(.*)item",
+        "transforms.Reroute.topic.replacement": "item",
+        "key.converter": "org.apache.kafka.connect.json.JsonConverter",
+        "key.converter.schemas.enable": "false",
+        "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+        "value.converter.schemas.enable": "false",
+        "snapshot.mode": "initial",
+        "decimal.format": "NUMERIC",
+        "json.output.decimal.format": "NUMERIC",
+        "decimal.handling.mode": "string"
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "name": "es-connector",
+    "config": {
+        "type.name": "_doc",
+        "connector.client.config.override.policy": "All",
+        "consumer.override.group.id": "sample_consumer_group_id",
+        "consumer.override.client.id": "sample_client_id",
+        "name": "es-connector",
+        "connector.class": "io.confluent.connect.elasticsearch.ElasticsearchSinkConnector",
+        "tasks.max": "1",
+        "topics": "item",
+        "connection.url": "http://es:9200",
+        "max.retries": "2",
+        "retry.backoff.ms": "3000",
+        "key.ignore": "false",
+        "schema.ignore": "true",
+        "schemas.enable": "false",
+        "behavior.on.null.values": "DELETE",
+        "transforms": "extractKey",
+        "transforms.extractKey.type": "org.apache.kafka.connect.transforms.ExtractField$Key",
+        "transforms.extractKey.field": "id",
+        "key.converter": "org.apache.kafka.connect.json.JsonConverter",
+        "key.converter.schemas.enable": "false",
+        "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+        "value.converter.schemas.enable": "false"
+    }
+}

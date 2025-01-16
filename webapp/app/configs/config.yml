@@ -1,0 +1,6 @@
+DB:
+  HOST: postgres
+  PORT: 5432
+  USER: postgres_user
+  PASSWORD: postgres_password
+  DB: app
