@@ -4,6 +4,10 @@
 
 -   `docker-compose up -d`
 
-- Swagger: `http://localhost:44365/docs`
-- Kafkaui: `http://localhost:44365/kafkaui/`
-- Kafkaui: `http://localhost:44365/kafkaui/`
+-   Swagger: [localhost:44365/docs](http://localhost:44365/docs)
+-   Kafkaui: [localhost:44365/kafkaui/](http://localhost:44365/kafkaui/)
+-   Kafkaui: [localhost:44365/kafkaui/](http://localhost:44365/kafkaui/)
+
+## TODO
+
+-   [Partition Routing](https://debezium.io/documentation/reference/stable/transformations/partition-routing.html)
