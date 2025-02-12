@@ -6,7 +6,6 @@
 
 -   Swagger: [localhost:44365/docs](http://localhost:44365/docs)
 -   Kafkaui: [localhost:44365/kafkaui/](http://localhost:44365/kafkaui/)
--   Kafkaui: [localhost:44365/kafkaui/](http://localhost:44365/kafkaui/)
 
 ## TODO
 
